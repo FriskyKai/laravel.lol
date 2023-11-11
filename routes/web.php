@@ -119,4 +119,9 @@ Route::get('/hello2/{id}', [PostController::class, 'info'])->where('id','[1-5]')
 Route::get('/hello5/{name}', [PostController::class, 'hello5']);
 
 
+/* Представления */
+Route::get('/hello6', [PostController::class, 'hello6']);
+
+Route::get('/hello7/{name}', [PostController::class, 'hello7']);
+
 
