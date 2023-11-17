@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\TestingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -105,7 +106,7 @@ Route::prefix('/test3')->group(function () {
 Route::get('/hi', ['App\Http\Controllers\PostController', 'hello']);
 
 /* Если мы заюзали (use App\Http\Controllers\PostController;) имя котроллера, то може писать так... */
-Route::get('/hi', [PostController::class, 'hello']);
+Route::get('/hello', [PostController::class, 'hello']);
 
 /* Передача параметра маршрута в контроллер */
 Route::get('/hi/{name}', [PostController::class, 'hello2']);
@@ -113,15 +114,11 @@ Route::get('/hi/{name}', [PostController::class, 'hello2']);
 /* Применение параметров маршрутов */
 Route::get('/hello/{id}', [PostController::class, 'hello3'])->where('id','[1-4]');
 
-/* Самостоятельное задание */
-Route::get('/hello2/{id}', [PostController::class, 'info'])->where('id','[1-5]');
-
 Route::get('/hello5/{name}', [PostController::class, 'hello5']);
-
 
 /* Представления */
 Route::get('/hello6', [PostController::class, 'hello6']);
 
 Route::get('/hello7/{name}', [PostController::class, 'hello7']);
 
-
+Route::get('/testing', [TestingController::class, 'index']);
